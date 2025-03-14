@@ -148,7 +148,14 @@ public final class Entreprise {
      */
     public static boolean estDansPlage(LocalDate d, LocalDate debut, LocalDate fin) {
         // à implémenter en TDD !
-        throw new RuntimeException("à implémenter en TDD !");
+//        throw new RuntimeException("à implémenter en TDD !");
+
+        if (d == null || debut == null || fin == null) {
+            throw new IllegalArgumentException("Les dates ne peuvent pas être nulles");
+        }
+        return (d.isEqual(debut) || d.isEqual(fin) || (d.isAfter(debut) && d.isBefore(fin)));
+
+//        Sans faire de TDD, je pense que j'aurais oublié les cas limites et mis plus de temps à développer
     }
 
 }
